@@ -1,0 +1,581 @@
+/* 공통요소 */
+/* 1. 바깥여백, 안쪽여백이 태그마다 기본이 있으므로, 모두 0으로 제거하기  */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd{
+    margin:0;
+    padding:0;
+}
+/* list앞에 장식 제거하기 */
+li{
+    list-style:none;
+}
+/* a 파랑색에 밑줄 글자색과 밑줄제거하기 */
+a{
+    color:#222;
+    text-decoration:none;
+}
+/* hr 구분선 제거하기 */
+hr{
+    display:none;
+}
+/* .blind를 가지는 제목들은 화면에는 사라지지만 리더기를 통해서는 읽혀지도록 */
+/* .blind{
+    position:absolute;
+    top:-99999px;
+} */
+
+/* 폰트, 크기, 색상 body */
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:14px;
+    color:#7f7f7f;
+}
+
+/* img 이미지가 연속으로 나오면 글자와의 정렬때문에 공간이 생긴다.  */
+img{
+    vertical-align: middle;
+    border:0;
+}
+
+/* 모든 자식 요소가 float되면 부모는 높이 값이 사라진다.
+아래에 있는 요소가 올라온다.  */
+.clearFix::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.conCenter{
+    width:1180px;
+    margin:0 auto;
+    background-color:rgba(255,0,0,0.3);
+}
+
+/* #header */
+#header{
+    padding-top:17px;
+    position:absolute;
+    width:100%;
+    z-index:1000;
+}
+.logo{
+    float:left;
+    /* margin-top:17px; */
+    /* float안되면 부모에 margin-top이 적용된다. float이 있기 때문에 margin-top이 가능하다, 아니면 padding-top을 줘야된다. 
+     */
+     margin-right:20px;
+     font-size:0;
+}
+.member{
+    background-color:yellow;
+    float:left;
+}
+.member>li{
+    float:left;
+    margin-right:5px;
+}
+.member>li>a{
+    display:block;
+    height:30px;
+    font-weight: bold;
+    line-height:30px;
+    text-indent:30px;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.member>li:first-child>a{
+    width:80px;
+    background-image:url(../images/gnb_member_re1121.png);
+    color:white;
+}
+
+.member>li:last-child>a{
+    width:100px;
+    background-image: url(../images/gnb_cert_re1203.png);
+}
+
+.menu{
+    display: none;
+    width:109px;
+    height:27px;
+    background:white;
+    border:1px solid #999;
+    position:absolute;
+    border-radius:5px;
+    margin-left:-5px;
+    padding:5px 0;
+
+}
+.menu>li{
+    float:left;
+    width:50%;
+    text-align: center;
+    line-height: 27px;
+    border-left:1px solid #ccc;
+    box-sizing: border-box;
+}
+.menu>li:first-child{
+    border-left:none;
+}
+
+
+.member>li:hover .menu{
+    display: block;
+}
+
+/* 메인메뉴 */
+#nav{
+    float:left;
+    margin-left:35px;
+    margin-top:2px;
+}
+#nav>li{
+    float:left;
+    margin:0 12px;
+}
+#nav>li>a{
+    font-size:19px;
+    font-weight:500;
+}
+/* 서브 */
+.subWrap{
+    width:140px;
+    display: none;
+    position:absolute;
+    border:1px solid black;
+    background:white;
+    padding:15px 20px 10px;
+    margin-left:-50px;
+    line-height: 2;
+}
+.subWrap>h2>a{
+    display:block;
+    font-size:16px;
+    border-bottom:2px solid black;
+    padding-bottom:10px;
+    margin-bottom:10px;
+}
+
+#nav>li:hover .subWrap{
+    display: block;
+}
+
+
+.gnb{
+    float:right;
+    margin-top:2px;
+}
+.gnb>li{
+    float:left;
+    margin-left:24px;
+}
+.gnb>li>a{
+    font-size:18px;
+    font-weight: 500;
+}
+
+/* gnbsub */
+.gnbSub{
+    display: none;
+    width:200px;
+}
+
+.gnb>li:hover .gnbSub{
+    display: block;
+}
+
+.gnb>li span{
+    margin-left:7px;
+}
+
+
+/* #mainBanner */
+#mainBanner{
+    position:relative;
+    height:520px;
+}
+.banner{
+    /* height:520px; */
+}
+.banner>li{
+    width:100%;
+    /* height:100%; */
+    height:520px;
+    position:absolute;
+}
+.banner>li>a{
+    display: block;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-position:center 0;
+}
+.banner>li:first-child>a{
+    background-color:rgb(218, 244, 253);
+    background-image: url(../images/banker202102042.png);
+}
+.banner>li:nth-child(2)>a{
+    background-color:rgb(255, 243, 195);
+    background-image: url(../images/1.jpg);
+}
+.banner>li:last-child>a{
+    background-color:rgb(237, 243, 253);
+    background-image: url(../images/enter.png);
+}
+
+.page{
+    position:absolute;
+    right:50%;
+    bottom:60px;
+}
+.page>li{
+    float:left;
+    margin-right:15px;
+}
+
+.page>li>a{
+    display: block;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:black;
+    opacity:0.6;
+    text-indent:-99999px;
+}
+.controlBtn{
+    position:absolute;
+    left:50%;
+    bottom:57px;
+}
+.controlBtn>li{
+    float:left;
+    margin-left:20px;
+}
+.controlBtn>li>a{
+    display: block;
+    background-repeat: no-repeat;
+    background-position:center center;
+    width:11px;
+    height:14px;
+    text-indent: -9999px;
+    background-size:10px;
+}
+.controlBtn>.playStop>a{  
+    background-image:url(../images/slides_btn_play_new0919.png);
+}
+
+.controlBtn>.leftBtn>a{ 
+    opacity: 0.4;
+    background-image:url(../images/slides_btn_previous_new0924.png);
+}
+.controlBtn>.rightBtn>a{ 
+    opacity:0.4;
+    background-image:url(../images/slides_btn_next_new0924.png);
+}
+
+/* #container */
+#container{}
+#container .title{
+    color:black;
+    margin-bottom:25px;
+}
+.quickEtcWrap{
+    text-align: center;
+    position:relative;
+    top:-35px;
+}
+.quick{
+    /* width:770px; */
+    background:#3a8dfd;
+    border-radius: 60px;
+    overflow: hidden;
+    display: inline-block;
+}
+.quick>li{
+    float:left;
+}
+.quick>li>a{
+    display: block;
+    color:white;
+    font-size:22px;
+    line-height: 28px;
+    font-weight: 600;
+    padding:20px 51px 30px;
+}
+.quick>.otherBank>a{
+    font-size:20px;
+    padding:11px 45px 11px 55px;
+    background:#0082cd;
+}
+.quick>.quickMenu>a{
+    padding:20px 55px 30px 35px;
+    color:#222;
+    background:white url(../images/slides_btn_next_new0924.png) no-repeat 85% center;
+}
+
+
+/* etcMenu */
+.etcMenu{
+    text-align:center;
+}
+.etcMenu>li{
+    display:inline-block;
+    margin:0 15px;
+}
+.etcMenu>li>a{
+    font-size:16px;
+    color:#7f7e7e;
+    font-weight:bolder;
+}
+
+/* 금융상품 */
+.financialCard{
+    padding-bottom:50px;
+}
+.financialCard>div>div{
+    float:left;
+}
+
+
+.financialCard>div>div li{
+    float:left;
+    margin-right:15px;
+}
+.financialCard>div>div li>a{
+    display:block;
+    width:85px;
+    height:85px;
+    border-radius: 50%;
+    background-repeat:no-repeat;
+    background-position:center 10px;
+    font-size:15px;
+    font-weight: bold;
+    text-align: center;
+}
+.financial li:first-child>a{
+    background-image: url(../images/icon_set_011.png);
+}
+.financial li:nth-child(2)>a{
+    background-image: url(../images/icon_set_022.png);
+}
+.financial li:nth-child(3)>a{
+    background-image: url(../images/icon_set_033.png);
+}
+.financial li:nth-child(4)>a{
+    background-image: url(../images/icon_set_044.png);
+}
+.financial li:nth-child(5)>a{
+    background-image: url(../images/icon_set_055.png);
+}
+.financial li:nth-child(6)>a{
+    background-image: url(../images/icon_set_066.png);
+}
+.financial li:nth-child(7)>a{
+    background-image: url(../images/icon_set_077.png);
+}
+.financial li:nth-child(8)>a{
+    background-image: url(../images/icon_set_088.png);
+}
+
+
+.card{
+    margin-left:50px;
+}
+.card>ul{
+    border-left:1px solid #e9f2ff;
+    overflow: hidden;
+}
+
+.card li:first-child>a{
+    background-image: url(../images/icon_set_099.png);
+}
+
+.card li:nth-child(2)>a{
+    background-image: url(../images/icon_set_01010.png);
+}
+.card li:nth-child(3)>a{
+    background-image: url(../images/icon_set_01111.png);
+}
+
+.financialCard>div>div li>a>span{
+    padding-top:55px;
+    display:block;
+}
+
+.financialCard>div>div li>a:hover{
+    background-color:#3a8dfd;
+    color:white;
+}
+.financial li:first-child>a:hover{
+    background-image: url(../images/icon_set_011_over.png);
+}
+.financial li:nth-child(2)>a:hover{
+    background-image: url(../images/icon_set_022_over.png);
+}
+.financial li:nth-child(3)>a:hover{
+    background-image: url(../images/icon_set_033_over.png);
+}
+.financial li:nth-child(4)>a:hover{
+    background-image: url(../images/icon_set_044_over.png);
+}
+.financial li:nth-child(5)>a:hover{
+    background-image: url(../images/icon_set_055_over.png);
+}
+.financial li:nth-child(6)>a:hover{
+    background-image: url(../images/icon_set_066_over.png);
+}
+.financial li:nth-child(7)>a:hover{
+    background-image: url(../images/icon_set_077_over.png);
+}
+.financial li:nth-child(8)>a:hover{
+    background-image: url(../images/icon_set_088_over.png);
+}
+
+.card li:first-child>a:hover{
+    background-image: url(../images/icon_set_099_over.png);
+}
+
+.card li:nth-child(2)>a:hover{
+    background-image: url(../images/icon_set_01010_over.png);
+}
+.card li:nth-child(3)>a:hover{
+    background-image: url(../images/icon_set_01111_over.png);
+}
+/* 서비스 */
+.service{
+    padding-bottom:50px;
+}
+.service ul>li{
+    float:left;
+    border:1px solid #ccc;
+    text-align: center;
+    padding-bottom:10px;
+    width:374px;
+}
+.service ul>li:nth-child(2){
+    margin:0 25px;
+}
+.service ul>li h3{
+    font-size:19px;
+    color:#555;
+    margin:10px 0;
+}
+.service ul>li img{
+    width:100%;
+}
+/* newsEvent */
+.newsEvent{
+    padding:40px 0 50px;
+    background-color:#f4f7fa;
+}
+
+.newsEvent>div>div{
+    float:left;
+    width:50%;
+    position:relative;
+}
+
+.newsEvent>div>div .title{
+    float:left;
+}
+.newsEvent>div>div ul{
+    background:skyblue;
+    float:left;
+    margin-left:30px;
+    line-height: 3;
+}
+
+.newsEvent>div>div ul li{
+    width:400px;
+    border-bottom:1px solid #ddd;
+    overflow:hidden
+}
+.newsEvent>div>div ul li>a{
+    background:pink;
+    float:left;
+    width:280px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.newsEvent>div>div ul li>span{
+    float:right;
+}
+
+.newsEvent .more{
+    position:absolute;
+    left:0;
+    top:40px;
+    background:url(../images/slides_btn_next_new0924.png) no-repeat right center;
+    padding-right:20px;
+    background-size:8px;
+}
+
+/* #footer */
+#footer{
+    border-top:2px solid #d4d4d4;
+    margin-top:40px;
+}
+.footTop{
+    background:#f8f8f8;
+    border:1px solid #d4d4d4;
+    padding:10px 0;
+}
+.footTop .footMenu{
+    float:left;
+}
+.footTop .sns{
+    float:right;
+}
+
+.footTop ul li{
+    float:left;
+    margin:0 5px;
+}
+.footTop .footMenu>li a{
+    background:url(../images/icon_more.png) no-repeat right center;
+    padding:0 20px;
+    border-left:1px solid #ccc;
+    margin-left:40px;
+}
+.footTop .footMenu>li:first-child>a{
+    border-left:none;
+}
+
+.footBottom{}
+
+.footBottom>.conCenter{
+    position:relative;
+    padding:15px 0 30px;
+}
+
+.footLogo{
+    position:absolute;
+    top:30px;
+}
+.footList{
+    overflow:hidden;
+    margin:10px 0 10px 80px;
+    width:700px;
+}
+.footList>li{
+    float:left;
+    border-right:1px solid blue;
+    padding:0 5px;
+    line-height: 1;
+}
+small{
+    margin-left:80px;
+}
+.info{
+    position:absolute;
+    right:35px;
+    top:40px;
+}
+.info>li{
+    float:left;
+    margin-right:15px;
+}
+.info .textBox{
+    display: none;
+}
+
