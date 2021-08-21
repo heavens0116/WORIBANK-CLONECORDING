@@ -47,7 +47,6 @@ img{
 .conCenter{
     width:1180px;
     margin:0 auto;
-    background-color:rgba(255,0,0,0.3);
 }
 
 /* #header */
@@ -62,11 +61,10 @@ img{
     /* margin-top:17px; */
     /* float안되면 부모에 margin-top이 적용된다. float이 있기 때문에 margin-top이 가능하다, 아니면 padding-top을 줘야된다. 
      */
-     margin-right:20px;
-     font-size:0;
+    margin-right:20px;
+    font-size:0;
 }
 .member{
-    background-color:yellow;
     float:left;
 }
 .member>li{
@@ -478,7 +476,6 @@ img{
     float:left;
 }
 .newsEvent>div>div ul{
-    background:skyblue;
     float:left;
     margin-left:30px;
     line-height: 3;
@@ -490,7 +487,6 @@ img{
     overflow:hidden
 }
 .newsEvent>div>div ul li>a{
-    background:pink;
     float:left;
     width:280px;
     white-space: nowrap;
